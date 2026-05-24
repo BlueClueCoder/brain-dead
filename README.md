@@ -1,3 +1,23 @@
+# Brain Dead
+
+## How to Run
+- Locally: npm run dev
+- Remote: npm run build
+
+## Mechanics
+- 
+
+## To Do
+### UI
+- Product Board Item
+- Message
+- Contacts Navbar
+- Conversation
+- Product Board Page
+- Confirm Button
+- Cancel Button
+- Navigation Button
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

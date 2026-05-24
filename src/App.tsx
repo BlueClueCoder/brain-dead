@@ -2,10 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import { EInfectionLevel, scrambleMessage } from './messages/utils/scrambleMessage'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [label, setLabel] = useState<string>("Nothing Yet");
 
   return (
     <>
@@ -24,9 +25,9 @@ function App() {
         <button
           type="button"
           className="counter"
-          onClick={() => setCount((count) => count + 1)}
+          onClick={() => setLabel(scrambleMessage({originalString: "This is a test message.", infectionLevel: EInfectionLevel.Lethal }))}
         >
-          Count is {count}
+          {label}
         </button>
       </section>
 

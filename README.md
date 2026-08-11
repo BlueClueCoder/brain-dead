@@ -2,12 +2,19 @@
 
 ## How to Run
 - Locally: npm run dev
-- Remote: npm run build
+- Remote: npm run deploy
 
 ## Mechanics
 - 
 
 ## To Do
+### Logic
+- Timer ticker for overall game flow
+- Pause capabilities
+- Product feature name generator
+  - based on which kinds of skills are needed to solve it
+  - Suffix, Prefix, Version
+
 ### UI
 - Product Board Item
 - Message

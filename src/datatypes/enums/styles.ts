@@ -1,3 +1,5 @@
+// can probably move this to index.css
+
 export enum EColors {
     lightPink = "#FFABE7",
     darkPink = "#B8336A",

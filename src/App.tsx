@@ -14,7 +14,7 @@ function App() {
         <button
           type="button"
           className="counter"
-          onClick={() => setLabel(scrambleMessage({originalString: "This is a test message.", infectionLevel: EInfectionLevel.Lethal }))}
+          onClick={() => setLabel(scrambleMessage("This is a test message.", EInfectionLevel.Lethal))}
         >
           {label}
         </button>

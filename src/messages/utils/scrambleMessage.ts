@@ -6,6 +6,9 @@ export enum EInfectionLevel {
     Lethal,
 }
 
+// Why did I decide that message severity should disconnect from infection level?
+// There's probably other contexts where the numerical Infection level doesn't track with the scramble severity
+// Do I even need this enum, this feels overengineered, why not just link infection level directly to number of typos
 enum EMessageScrambleSeverity {
     None = 0,
     Mild = 1,
@@ -31,12 +34,7 @@ function _mapInfectionToMessageScramble(infectionLevel : EInfectionLevel) : EMes
     }
 }
 
-interface IScrambleMessageProps {
-    originalString: string;
-    infectionLevel: EInfectionLevel;
-}
-
-export function scrambleMessage({originalString, infectionLevel} : IScrambleMessageProps) : string {
+export function scrambleMessage(originalString : string, infectionLevel: EInfectionLevel) : string {
     // string to be manipulated
     let messagePlaceholder : string = originalString;
     

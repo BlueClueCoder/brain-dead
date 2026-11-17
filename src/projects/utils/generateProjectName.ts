@@ -1,14 +1,14 @@
 import { EProjectType } from "../../datatypes/enums/projectTypes";
 
-export const projectNamePrefixes : string[] = [
+export const projectPrefixes : string[] = [
     "Rust Resistant", "Lacquered", "Polished",
     "Synthetic", "Lightweight", "Augmented", "Improved",
     "Cheaper", "Efficient", "Effective", "Compostable",
     "Matte", "Glossy", "Biodegradable", "Collapsible",
     "Easy-Carry", "Quick-Drying", "Hypoallergenic",
-    "Hydrophobic"
+    "Hydrophobic", "Self-Replicating", "Intuitive"
 ]
-export const projectNameBases : string[] = [
+export const projectBases : string[] = [
     "Pillow Box", "Pillow Fold", "Pillow Top",
     "Hinge Cover", "Hinge Piece", "Rolls",
     "Fold", "Interior Panel", "Cap Panel",
@@ -21,20 +21,44 @@ export const projectNameBases : string[] = [
     "Corner", "Bottom"
 ];
 
-// Suffix
-// Project Type determines suffix
-// Definitely a better data structure for this (key: enum)
-export const projectNameSuffixes : string[][] = [
-    [
-        "Applicator", "Casting", "Blueprint", "Refactor"
-    ],
+// Management
+const managementProjectSuffixes : string[] = [
+    "Safety Protocol", "Training", "HR Module", "Internship",
+    "Career Fair", "Meeting", "Legal Debrief", "NDA Renewal",
+    "Quality Report",
+
 ];
 
-// spray, method, research, carving, improvement, fabrication, process
-// Venture, conference, showcase, report, quality report, survey, field study
-// longitudinal study, pitch, client summit, presentation
+// Engineering
+const engineeringProjectSuffixes : string[] = [
+    "Applicator", "Casting", "Blueprint", "Spray", "Method",
+    "Carving", "Fabrication", "Process", "Refinement"
 
-// Categories of work will help brainstorm terms
+];
+
+// Marketing
+const marketingProjectSuffixes : string[] = [
+    "Venture", "Showcase", "Pitch", "Conference",
+    "Client Summit", "Presentation", "Customer Survey",
+    "Feedback", "Networking Event", "Business Dinner"
+
+];
+
+// Software
+const softwareProjectSuffixes : string[] = [
+    "Refactor", "Grooming", "Algorithm", "Research",
+    "Longitudinal Study", "Field Study", "Computation",
+    "Budget Revision", "Neural Network", "Multithreading",
+    ""
+];
+
+// Suffix
+export const projectSuffixes : Record<EProjectType, string[]> = {
+    [EProjectType.management]: managementProjectSuffixes,
+    [EProjectType.engineering]: engineeringProjectSuffixes,
+    [EProjectType.marketing]: marketingProjectSuffixes,
+    [EProjectType.software]: softwareProjectSuffixes,
+};
 
 // The arrays should be stored and seeded in context:
     // Tickets shouldn't have the same words in them:
@@ -45,16 +69,22 @@ export const projectNameSuffixes : string[][] = [
 // but these should not remain interlinked, to allow for reworking a ticket
 // which will change the aspect distribution but not the name
 export function generateProjectName(projectType: EProjectType) : string {
+    let nameDraft = "";
+    nameDraft += projectPrefixes[Math.floor(Math.random() * projectPrefixes.length)] + " ";
+    nameDraft += projectBases[Math.floor(Math.random() * projectBases.length)] + " ";
     switch (projectType) {
         case EProjectType.engineering: 
-            return "Wooden handle";
-        case EProjectType.logistics:
-            return "hi";
+            nameDraft += engineeringProjectSuffixes[Math.floor(Math.random() * engineeringProjectSuffixes.length)];
+            break;
+        case EProjectType.management:
+            nameDraft += managementProjectSuffixes[Math.floor(Math.random() * managementProjectSuffixes.length)];
+            break;
         case EProjectType.marketing:
-            return "hello";
+            nameDraft += marketingProjectSuffixes[Math.floor(Math.random() * marketingProjectSuffixes.length)];
+            break;
         case EProjectType.software:
-            return "hehe";
-    }
-    
-    
+            nameDraft += softwareProjectSuffixes[Math.floor(Math.random() * softwareProjectSuffixes.length)];
+            break;
+        }
+        return nameDraft;
 }

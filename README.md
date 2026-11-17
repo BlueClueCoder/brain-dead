@@ -13,7 +13,6 @@
 - Pause capabilities
 - Product feature name generator
   - based on which kinds of skills are needed to solve it
-  - Suffix, Prefix, Version
 
 ### UI
 - Product Board Item

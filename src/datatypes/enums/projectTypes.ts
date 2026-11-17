@@ -1,5 +1,5 @@
 export enum EProjectType {
-    logistics = "LOGISTICS",
+    management = "MANAGEMENT",
     engineering = "ENGINEERING",
     marketing = "MARKETING",
     software = "SOFTWARE",

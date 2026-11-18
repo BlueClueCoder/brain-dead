@@ -5,9 +5,10 @@ import App from './App.tsx'
 import ProjectContextProvider from './contexts/ProjectContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
-  <ProjectContextProvider>
     <StrictMode>
-      <App />
+      <ProjectContextProvider>
+        <App />
+      </ProjectContextProvider>
     </StrictMode>
-  </ProjectContextProvider>
+  
 )

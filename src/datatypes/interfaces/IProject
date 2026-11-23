@@ -1,9 +1,0 @@
-import { EProjectType } from "../../datatypes/enums/projectTypes";
-
-export interface IProject {
-    id: number,
-    progress: number,
-    majorBranch: EProjectType,
-    secondaryBranch: EProjectType,
-    minorBranch: EProjectType,
-}

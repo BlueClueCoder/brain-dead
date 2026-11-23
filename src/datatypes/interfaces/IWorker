@@ -1,0 +1,12 @@
+import { EProjectType } from "../enums/projectTypes";
+import { EQuality } from "../enums/EQualities";
+import { EInfectionLevel } from "../enums/EInfectionLevels";
+
+export interface IWorker {
+    id: number,
+    name: string,
+    alive: boolean,
+    skills: Record<EProjectType, number>,
+    qualities: EQuality[],
+    infectionLevel: EInfectionLevel,
+}

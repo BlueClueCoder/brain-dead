@@ -1,10 +1,4 @@
-export enum EInfectionLevel {
-    None,
-    Mild,
-    Moderate,
-    High,
-    Lethal,
-}
+import { EInfectionLevel } from "../../datatypes/enums/EInfectionLevels";
 
 // Why did I decide that message severity should disconnect from infection level?
 // There's probably other contexts where the numerical Infection level doesn't track with the scramble severity
